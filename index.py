@@ -8,6 +8,8 @@ from pycloudflared import try_cloudflare
 from commands.import_users import handle as userImportHandle
 from lib.slack_client import initialize
 from lib.slack_app import app
+from services.schedule import generate_schedule
+
 
 tc = try_cloudflare(port=3000)
 
@@ -26,5 +28,12 @@ def import_users(ack, respond, command):
     ack()
     userImportHandle(command)
     respond("Users imported")
+    
+@app.command("/generate_schedule")
+def generate_schedule_command(ack, respond, command):
+    ack()
+    generate_schedule()
+    respond("Schedule generated")
+
 if __name__ == "__main__":
     app.start(port=int(os.environ.get("PORT", 3000)))

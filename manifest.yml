@@ -8,12 +8,16 @@ features:
     always_online: false
   slash_commands:
     - command: /echo
-      url: 'https://m-brazilian-insulin-turtle.trycloudflare.com/slack/events'
+      url: 'https://heritage-states-attempting-knowing.trycloudflare.com/slack/events'
       description: Next time you are scheduled to clean
       should_escape: false
     - command: /scheduler_import_users
-      url: 'https://m-brazilian-insulin-turtle.trycloudflare.com/slack/events'
+      url: 'https://heritage-states-attempting-knowing.trycloudflare.com/slack/events'
       description: Next time you are scheduled to clean
+      should_escape: false
+    - command: /generate_schedule
+      url: 'https://heritage-states-attempting-knowing.trycloudflare.com/slack/events'
+      description: Generates the schedule used by the daily job
       should_escape: false
 oauth_config:
   redirect_urls:

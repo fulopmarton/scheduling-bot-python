@@ -15,6 +15,10 @@ features:
       url: '{{app_url}}/slack/events'
       description: Next time you are scheduled to clean
       should_escape: false
+    - command: /generate_schedule
+      url: '{{app_url}}/slack/events'
+      description: Generates the schedule used by the daily job
+      should_escape: false
 oauth_config:
   redirect_urls:
     - https://localhost:5555
