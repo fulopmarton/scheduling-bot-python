@@ -25,8 +25,6 @@ def repeat_text(ack, respond, command):
 def import_users(ack, respond, command):
     ack()
     userImportHandle(command)
-    
-    
     respond("Users imported")
 if __name__ == "__main__":
     app.start(port=int(os.environ.get("PORT", 3000)))
