@@ -2,7 +2,7 @@ from slack_sdk import WebClient
 from os import environ
 import yaml
 
-SlackClient = WebClient(token=environ.get("SLACK_BOT_TOKEN"))
+# SlackClient = WebClient(token=environ.get("SLACK_BOT_TOKEN"))
 
 def initialize(app_url: str):
     raw_contents = ""
