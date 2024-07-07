@@ -16,10 +16,10 @@ def read_last_date():
     except FileNotFoundError:
         return None
 
-def generate_schedule():
+def generate_schedule(end_date=datetime.today()+timedelta(days=30)):
     last_date = read_last_date()
     current_date = last_date or datetime.today() + timedelta(days=1)
-    end_date = datetime.today() + timedelta(days=30)
+    # end_date = datetime.today() + timedelta(days=30)
     users = read_users()
     current_user_index = 0
     

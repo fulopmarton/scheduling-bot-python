@@ -9,7 +9,7 @@ from commands.import_users import handle as userImportHandle
 from lib.slack_client import initialize
 from lib.slack_app import app
 from services.schedule import generate_schedule
-
+from daily_jobs.send_message import initialize as initialize_send_message_job
 
 tc = try_cloudflare(port=3000)
 
@@ -35,5 +35,9 @@ def generate_schedule_command(ack, respond, command):
     generate_schedule()
     respond("Schedule generated")
 
+
+
+
 if __name__ == "__main__":
+    initialize_send_message_job()
     app.start(port=int(os.environ.get("PORT", 3000)))
